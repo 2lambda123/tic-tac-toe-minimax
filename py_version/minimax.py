@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from math import inf as infinity
-from random import choice
 import platform
 import time
 from os import system
+import secrets
 
 """
 An implementation of Minimax AI Algorithm in Tic Tac Toe,
@@ -201,8 +201,8 @@ def ai_turn(c_choice, h_choice):
     render(board, c_choice, h_choice)
 
     if depth == 9:
-        x = choice([0, 1, 2])
-        y = choice([0, 1, 2])
+        x = secrets.SystemRandom().choice([0, 1, 2])
+        y = secrets.SystemRandom().choice([0, 1, 2])
     else:
         move = minimax(board, depth, COMP)
         x, y = move[0], move[1]
